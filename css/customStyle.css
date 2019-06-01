@@ -1,0 +1,463 @@
+body {
+	overflow-x: hidden;
+}
+
+#loginDesign {
+	text-align: center;
+	background-color: #003366;
+	color: lightblue;
+	padding: 20px;
+	display: block;
+	margin: 40px 40px;
+	overflow: hidden;
+}
+
+#loginDesign #forgot-password {
+	color: lightblue;
+}
+
+#loginDesign #forgot-password:hover {
+	text-decoration: underline;
+	background-color: #003366;
+}
+
+
+#loginDesign .indexbtn {
+	color: #003366;
+	width: 100%;
+	background-color: lightblue;
+	border-radius: 0px;
+}
+
+.indexbtn {
+	color: #003366;
+	width: 100%;
+	background-color: lightblue;
+	border-radius: 0px;
+}
+
+#passwordRecover {
+	padding: 25px;
+}
+
+#recover {
+	color: lightblue;
+	background-color: #003366;
+}
+
+.login-design-form {
+	border-radius: 0px;
+}
+
+.post-images{
+	width:220px;
+	height: 250px;
+	margin-bottom:3px;
+}
+#images{
+	display: inline;
+}
+
+.fa {
+	position: relative;
+	display: table-cell;
+	width: 60px;
+	height: 36px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 20px;
+}
+
+#main-menu {
+	background: #003366;
+	border-right: 1px solid #e5e5e5;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	width: 0;
+	overflow: hidden;
+	-webkit-transition: width .05s linear;
+	transition: 0.5s;
+	z-index: 1000;
+}
+
+#main-menu>ul {
+	margin: 7px 0;
+}
+
+#main-menu li {
+	position: relative;
+	display: block;
+	width: 250px;
+}
+
+#main-menu li>a {
+	position: relative;
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: lightblue;
+	font-size: 100%;
+	text-decoration: none;
+	transition: all .1s linear;
+}
+
+thead {
+	background-color: lightblue;
+	color: #003366;
+}
+
+#main-menu li>a:hover {
+	background-color: lightblue;
+	color: #003366;
+}
+
+#main-menu .nav-icon {
+	position: relative;
+	display: table-cell;
+	width: 60px;
+	height: 36px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 100%;
+}
+
+#main-menu .nav-text {
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	width: 190px;
+}
+
+#main-menu>ul.logout {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #003366;
+	background-color: lightblue;
+}
+
+#content {
+	color: #003366;
+}
+
+nav ul,
+nav li {
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 8px;
+	font-size: 20px;
+}
+
+.icon {
+	width: 20%;
+}
+
+@media (min-width: 1281px) {
+	#content {
+		margin: auto;
+	}
+	.icon {
+		width: 20%;
+    }
+    .header {
+        overflow: hidden;
+        padding: 20px 10px;
+        background-color: #003366;
+        color: lightblue;
+        width: 110%;
+        margin-bottom: 2%;
+	}
+	.profile-img{
+		max-width: 30%;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+	#content {
+		margin: auto;
+		overflow: hidden;
+	}
+	.icon {
+		width: 20%;
+    }
+    .header {
+        overflow: hidden;
+        padding: 20px 10px;
+        background-color: #003366;
+        color: lightblue;
+        width: 110%;
+        margin-bottom: 2%;
+	}
+	.profile-img{
+		max-width: 20%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	#content {
+		margin-left: 10%;
+		margin-right: 10%;
+		overflow: hidden;
+	}
+	.icon {
+		width: 20%;
+    }
+    .header {
+        overflow: hidden;
+        padding: 20px 10px;
+        background-color: #003366;
+        color: lightblue;
+        width: 110%;
+        margin-bottom: 2%;
+	}
+	.profile-img{
+		max-width: 20%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	#content {
+		margin-left: 10%;
+		margin-right: 10%;
+		overflow: hidden;
+	}
+	#category_chart {
+		width: 25em;
+		height: 25em;
+	}
+	.icon {
+		width: 20%;
+    }
+    .header {
+        overflow: hidden;
+        padding: 20px 10px;
+        background-color: #003366;
+        color: lightblue;
+        width: 110%;
+        margin-bottom: 2%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+	#content {
+		margin-left: 10%;
+		margin-right: 10%;
+		overflow: hidden;
+	}
+	#category_chart {
+		width: 25em;
+		height: 25em;
+	}
+	.header h1 {
+		font-size: 30px;
+    }
+    .header {
+        overflow: hidden;
+        padding: 20px 10px;
+        background-color: #003366;
+        color: lightblue;
+        width: 110%;
+        margin-bottom: 2%;
+    }
+	.icon {
+		width: 20%;
+	}
+	.profile-img{
+		max-width: 40%;
+	}
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+	#content {
+		margin-left: 5%;
+		overflow: hidden;
+	}
+	.header h1 {
+		font-size: 35px;
+    }
+    .header {
+        overflow: hidden;
+        padding: 20px 10px;
+        background-color: #003366;
+        color: lightblue;
+        width: 110%;
+        margin-bottom: 2%;
+    }
+  
+	#category_chart {
+		width: 25em;
+		height: 25em;
+	}
+	.icon {
+		width: 100%;
+	}
+	.profile-img{
+		max-width: 40%;
+	}
+}
+
+
+.header h1 {
+    font-size: 35px;
+}
+.header {
+    overflow: hidden;
+    padding: 20px 10px;
+    background-color: #003366;
+    color: lightblue;
+    width: 110%;
+    margin-bottom: 2%;
+}
+
+#category_chart {
+    width: 25em;
+    height: 25em;
+}
+
+#warning{
+	color:red;
+	font-weight: bolder;
+}
+
+.cat-table{
+	text-align: center;
+}
+.modal-admin{
+	padding:20px;
+}
+#titleBar {
+	color: lightblue;
+	margin-left: 25px;
+	margin-right: 25px;
+	text-align: center;
+}
+
+.cardDisplay {
+	margin-bottom: 1px;
+	margin-right: 12px;
+}
+
+.card .card-text {
+	text-align: center;
+	font-size: 38px;
+	font-weight: bolder;
+}
+
+.card .card-header {
+	background-color: #003366;
+	color: lightblue;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.card .card-body {
+	background-color: lightblue;
+	color: #003366;
+	border-style: none;
+}
+
+.card .card-title {
+	text-align: center;
+}
+
+.card {
+	max-width: 18rem;
+	max-height: 20rem;
+}
+
+#add-cat {
+	float: right;
+	padding: 3px 3px 3px 3px;
+}
+
+#add-cat:hover {
+	color: lightblue;
+	background-color: #003366;
+}
+
+#open-nav {
+	float: left;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 25px;
+	border-radius: 4px;
+}
+
+.fa-bars:hover {
+	color: #003366;
+	background-color: lightblue;
+}
+
+.fa-bars {
+	color: lightblue;
+}
+
+.header-right {
+	float: left;
+}
+
+#report-head-design {
+	background: #003366;
+	color: lightblue;
+}
+
+
+#message-body {
+	font-size: larger;
+}
+
+.back-home:hover {
+	color: #003366;
+	background-color: transparent;
+}
+
+#report-from {
+	float: left;
+}
+
+#warning-delete {
+	color: #003366;
+}
+
+#warning-title {
+	color: #003366;
+}
+
+#delete-post {
+	float: right;
+}
+
+.profile-details{
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+fieldset { 
+	display: block;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 0.35em;
+	padding-bottom: 0.625em;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	border: 2px groove (internal value);
+  }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Market</title>
+   </head>
+   <body>
+      <div data-ng-controller="ViewReportsCtrl" class="main">
+         <Header-file></Header-file>
+         <div class="header">
+            <span href="#" id="open-nav" onclick="openNav()">
+            <i class="fa fa-bars fa-2x"></i>
+            </span>
+            <div class="header-right">
+               <h1 class="header-title">Reports and Feedback</h1>
+            </div>
+         </div>
+
+            <div id="content" class="container">
+               <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+                     <h2 id="report-from">Report From : {{userEmail}}</h2>
+                  </div>
+                  
+               </div>
+
+               <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <ul>
+                        <li>Reporting : {{reportedEmail}}</li>
+                        <li>Not happy with : {{reportedProdut}}</li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <h4>Message:</h4>
+                     <div id="message-body">
+                        <p>{{reportmsg}}</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <button type="button" onclick="window.location.href = '#!reports'" class="back-home btn btn-info">Go Back</button>
+                     <button class="btn btn-danger delete-post" data-ng-click="deletepost()">Delete</button>
+                 </div>
+                 </div>
+      </div>
+   </div>
+   </body>
+   <script src="js/customApp.js"></script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Market</title>
+   </head>
+   <body>
+      <div data-ng-controller="allAdsCtrl" class="main">
+         <Header-file></Header-file>
+         <div class="main">
+            <div class="header">
+               <span href="#" id="open-nav" onclick="openNav()">
+               <i class="fa fa-bars fa-2x"></i>
+               </span>
+               <div class="header-right">
+                  <h1 class="header-title">Ads Management</h1>
+               </div>
+            </div>
+            <div id="content" class="container">
+               <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <form>
+                         <input type="text" class="form-control" placeholder="Search for ads..." id="searchAds"/>
+                     </form><br>
+                     <table class="table table-hover" id="adsTable">
+                        <thead>
+                           <tr>
+                              <th>TimeStamp</th>
+                              <th>Title</th>
+                              <th>Category</th>
+                              <th>Details</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr data-ng-repeat="i in posts">
+                              <td>{{i.dateTime}}</td>
+                              <td>{{i.postName}}</td>
+                              <td>{{i.postCategory}}</td>
+                              <td><a href="#!showAd" data-ng-click="showAd(i.$id)">View More</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="js/customApp.js"></script>
+
+</html>

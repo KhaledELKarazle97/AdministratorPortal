@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="customApp">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="icon" href="./favicon.ico"  type="image/x-icon" >
+      <link rel="stylesheet" href="css/customStyle.css">
+      <title>Market | Administrator Portal</title>
+   </head>
+   <body>
+      <div data-ng-controller="adminCtrl" >
+         <div class="container">
+            <div class="row">
+                  <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-12 col-xs-12 col-xl-6 offset-xl-3">
+                     <form class="form-inlin justify-content-center" data-ng-if="signin.state == false">
+                        <div id="loginDesign">
+                           <h1>Market</h1>
+                           <h3>Administrator Login</h3>
+                           <div class="form-group">
+                              <input type="email" required aria-required="true" placeholder="Email..." class="form-control login-design-form" data-ng-model="adminuser" />
+                              <br />
+                              <input type="password" required aria-required="true" placeholder="Password..." class="form-control login-design-form" data-ng-model="adminpwrd" />
+                              <br />
+                              <button type="submit" class="btn btn-primary indexbtn" data-ng-click="signInWithEmailAndPassword(adminuser,adminpwrd)">Login</button><br/>
+                              <a id="forgot-password"data-toggle="modal" data-target="#pwrdmodal" href="#">Forgotten Password?</a>
+                           </div>
+                        </div>
+                     </form>
+
+                  </div>
+               </div>
+               <div class="modal" id="pwrdmodal">
+                  <div class="modal-dialog">
+                     <div class="modal-content">
+                        <div class="modal-header" id="recover">
+                           <h4 class="modal-title">Recovering Password</h4>
+                           <hr>
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                           <div class="row">
+                              <div id="passwordRecover">
+                                 <h6>Please input your email below and we will send you instructions on what to do next:</h6>
+                                 <form class="form-inlin justify-content-center">
+                                    <div class="form-group">
+                                       <input type="email" placeholder="Email..." class="form-control login-design-form" data-ng-model="adminEmail" required/>
+                                       <br />
+                                       <button type="submit" class="btn btn-primary indexbtn" data-ng-click="getpwrd(adminEmail)" >Recover Password</button><br/>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+         </div>
+     
+      <div data-ng-if="signin.state == true">
+         <div data-ng-view="">
+         </div>
+         </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+      <script src="js/others.js"></script>
+      <script src="js/customApp.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/modules/exporting.js"></script>
+      <script src="https://code.highcharts.com/modules/offline-exporting.js"></script>      <script src="js/bootbox.min.js"></script>
+   </body>
+</html>

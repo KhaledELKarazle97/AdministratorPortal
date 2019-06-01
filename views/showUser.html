@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Market</title>
+   </head>
+   <body>
+      <div data-ng-controller="userCtrl" class="main">
+         <Header-file></Header-file>
+         <div class="main">
+            <div class="header">
+               <span href="#" id="open-nav" onclick="openNav()">
+               <i class="fa fa-bars fa-2x"></i>
+               </span>
+               <div class="header-right">
+                  <h1 class="header-title">Users Management</h1>
+               </div>
+            </div>
+            <div id="content" class="container">
+               <div class="row">
+                  <h2>Viewing {{email}} Profile</h2>
+               </div>
+               <hr>
+               <br>
+               <h3>Profile Picture</h3>
+               <img src={{url}} class="img-responsive img-thumbnail profile-img">
+               <div class="profile-details">
+                  <br>
+                  <h3>Details</h3>
+                  <hr>
+                  <form name="Userform">
+                     <div class="form-group">
+                        <fieldset>
+                           <legend>Personal Details</legend>
+                           <label for="name">Full Name</label>
+                           <input type="text" data-ng-model="name" id="name" value="{{name}}" class="form-control">
+                           <label for="location">Region</label>
+                           <input type="text" data-ng-model="location" id="location" value="{{location}}" class="form-control">
+                           <label for="area">Area</label>
+                           <input type="text" data-ng-model="area" id="area" value="{{area}}" class="form-control">
+                           <label for="phoneNumber">Phone Number</label>
+                           <input type="tel" data-ng-model="phoneNumber" id="phoneNumber" maxlength="10" value="{{phoneNumber}}" class="form-control">
+                           <label for="gender">Gender</label>
+                           <select class="form-control" id="gender">
+                              <option id="male">Male</option>
+                              <option id="female">Female</option>
+                           </select>
+                           <label for="birthday">Birthday</label>
+                           <input type="date" data-ng-model="birthday" id="birthday" value="{{birthday}}" class="form-control">
+                        </fieldset>
+                        <input type="submit" class="btn btn-success" value="Update Profile" data-ng-click="updateProfile()">               
+                     </div>
+                  </form>
+                  <legend>Other Details</legend>
+                  <p>Account Verified : {{verified}}</p>
+                  <p>Posted Ads: {{countProds}}</p>
+                  <button class="btn btn-primary" onclick="window.location.href = '#!users'">Go Back</button>
+                  <button class="btn btn-success" data-toggle="modal" data-target="#sendMsg">Send In-app Message</button>
+               </div>
+            </div>
+         </div>
+         <div class="modal fade" id="sendMsg" role="dialog">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h4>Send a Message</h4>
+                  </div>
+                  <div class="modal-body">
+                     <form>
+                        <input type="text" class="form-control" data-ng-model="user" required placeholder="Sending to..."><br>
+                        <input type="text" class="form-control" data-ng-model="admin" required placeholder="Admin's Username..."><br> 
+                        <textarea class="form-control" data-ng-model="message" required placeholder="Type Your Message Here..." rows="10"></textarea><br>
+                        <input type="submit" class="btn btn-success" value="Send" data-ng-click="sendMessage(admin,user,message)">               
+                     </form>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

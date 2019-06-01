@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Market</title>
+   </head>
+   <body>
+      <div data-ng-controller="allUsersCtrl" class="main">
+         <Header-file></Header-file>
+         <div class="main">
+            <div class="header">
+               <span href="#" id="open-nav" onclick="openNav()">
+               <i class="fa fa-bars fa-2x"></i>
+               </span>
+               <div class="header-right">
+                  <h1 class="header-title">Users Management</h1>
+               </div>
+            </div>
+            <div id="content" class="container">
+               <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <form>
+                         <input type="text" class="form-control" placeholder="Search for users..." id="searchUsers"/>
+                     </form><br>
+                     <a href="" data-toggle="modal" data-target="#createAdminModal">+ Create New Admin</a>
+                     <table class="table-responsive-md table table-hover" id="usersTable">
+                        <thead>
+                           <tr>
+                              <th>Email Addresses</th>
+                              <th>Creation Date</th>
+                              <th>Last Seen</th>
+                              <th>Full Details</th>
+                              <th>Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr data-ng-repeat="i in users">
+                              <td data-ng-hide="i.email == currentUser">{{i.email}}</td>
+                              <td data-ng-hide="i.email == currentUser">{{i.metadata.creationTime}}</td>
+                              <td data-ng-hide="i.email == currentUser">{{i.metadata.lastSignInTime}}</td>
+                              <td data-ng-hide="i.email == currentUser"><a href="#!showUser/{{i.uid}}/{{i.email}}">View More</a></td>
+
+                              <td colspan="2" data-ng-hide="i.email == currentUser">
+                                 <button type="button" class="btn btn-info" data-ng-click="manageUser('Freeze',i.uid)" data-ng-if="i.disabled == false ">Freeze</button>
+                                 <button type="button" class="btn btn-info" data-ng-click="manageUser('Unfreeze',i.uid)" data-ng-if="i.disabled == true ">Unfreeze</button>
+                                 <button type="button" class="btn btn-danger" data-ng-click="manageUser('Delete',i.uid)">Delete</button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+   
+      <div id="createAdminModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content modal-admin">
+                <div class="modal-header-admin">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">New Admin Account</h4>
+                  <hr>
+                </div>
+                <div class="modal-body">
+                  <form>
+                     <input class="form-control" data-ng-model="adminEmail" type="email" required placeholder="Email Address..."><br>
+                     <input class="form-control" min="8" data-ng-model="adminPass" type="password" required placeholder="Password..."><br>
+                     <input class="form-control" min="8" data-ng-model="repeatPass" type="password" required placeholder="Confirm Password..."><br>
+                     <input type="submit" data-ng-click="signpUp(adminEmail,adminPass,repeatPass)" value="Register" class="btn indexbtn"></input>
+
+                  </form>
+               </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+         </div>
+   </body>
+   <script src="js/customApp.js"></script>
+</html>

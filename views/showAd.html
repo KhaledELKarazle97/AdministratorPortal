@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Market</title>
+   </head>
+   <body>
+      <div data-ng-controller="adsCtrl" class="main">
+         <Header-file></Header-file>
+         <div class="main">
+            <div class="header">
+               <span href="#" id="open-nav" onclick="openNav()">
+               <i class="fa fa-bars fa-2x"></i>
+               </span>
+               <div class="header-right">
+                  <h1 class="header-title">Ads Management</h1>
+               </div>
+            </div>
+            <div id="content" class="container">
+               <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <h2>Advertisement Title : {{postName}}</h2>
+
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <h6 id="warning">{{warning}}</h6>
+                     <h6>Post Details</h6>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <ul>
+                        <li>Posted on: {{timeStamp}}</li>
+                        <li>Category : {{postCategory}}</li>
+                        <li>Region : {{region}}</li>
+                        <li>Area : {{area}}</li>
+                        <li>breed(If pet) : {{breed}}</li>
+                        <li>Age(If pet) : {{age}} Weeks</li>
+                        <li>Weight(If pet) : {{weight}} KG</li>
+                        <li>Status : {{status}}</li>
+                        <li>Owner : <a href="#!showUser/{{uid}}/{{postOwner}}">{{postOwner}}</a></li>
+                        <li>Description : {{description}}</li>
+                     </ul>
+                  </div>
+               </div>
+               <h4>Post Images</h4>
+               <div data-ng-repeat="i in images" id="images">
+                  <img src="{{i}}" class="post-images">
+               </div><br><br>
+               <button type="button" onclick="window.location.href = '#!ads'" class="back-home btn btn-info">Go Back</button>
+               <button type="button" class="btn btn-danger" data-ng-click="deleteAd(id)">Delete</button><br>
+            </div>
+         </div>
+      </div>
+      </div>
+      </div>
+   </body>
+   <script src="js/customApp.js"></script>
+</html>
+

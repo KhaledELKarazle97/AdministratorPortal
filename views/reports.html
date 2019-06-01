@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Market</title>
+   </head>
+   <body>
+      <div data-ng-controller="reportsCtrl" class="main">
+         <Header-file></Header-file>
+         <div class="main">
+            <div class="header">
+               <span href="#" id="open-nav" onclick="openNav()">
+               <i class="fa fa-bars fa-2x"></i>
+               </span>
+               <div class="header-right">
+                  <h1 class="header-title">Reports and Feedback</h1>
+               </div>
+            </div>
+            <div id="content" class="container">
+               <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <h2>Submitted Reports</h2>
+                     <table class="table-responsive-md table table-hover">
+                        <thead>
+                           <tr>
+                              <th>Timestamp</th>
+                              <th>Sender Email</th>
+                              <th>Sender's Phone Number</th>
+                              <th>Details</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr data-ng-repeat="i in reports">
+                              <td>{{i.timeStamp}}</td>
+                              <td>{{i.buyerEmail}}</td>
+                              <td>{{i.buyerPhoneNumber}}</td>
+                              <td><a data-ng-click="showReport(i.$id)" href="#!showReport/{{i.buyerEmail}}/{{i.reportedEmail}}/{{i.reportedPost}}/{{i.reportmsg}}">View More</a></td>
+                              
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="js/customApp.js"></script>
+</html>

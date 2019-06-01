@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Market</title>
+   </head>
+   <body>
+      <div data-ng-controller="dashboardCtrl">
+         <Header-file></Header-file>
+         <div class="header container-fluid">
+            <div class="row">
+               <div class="header-right col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <span href="#" id="open-nav" onclick="openNav()">
+                  <i class="fa fa-bars fa-2x"></i>
+                  </span>
+                  <h1 class="header-title">System Overview</h1>
+               </div>
+            </div>
+         </div>
+         <div class="container" id="content">
+            <div class="row">
+               <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-xl-6">
+                  <h4>Summary</h4>
+                  <div class="row cardDisplay">
+                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-xl-6">
+                        <div class="card text-white bg-info mb-3">
+                           <div class="card-header">Users</div>
+                           <div class="card-body">
+                              <h5 class="card-title">Registered Users:</h5>
+                              <p class="card-text">{{totalUsers}}</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-xl-6">
+                        <div class="card text-white mb-3">
+                           <div class="card-header">Advertisements</div>
+                           <div class="card-body">
+                              <h5 class="card-title">Posted Ads:</h5>
+                              <p class="card-text">{{totalAds}}</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row cardDisplay">
+                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-xl-6">
+                        <div class="card text-white bg-info mb-3">
+                           <div class="card-header">Reports</div>
+                           <div class="card-body">
+                              <h5 class="card-title">Recieved Reports:</h5>
+                              <p class="card-text">{{totalReports}}</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-xl-6">
+                        <div class="card text-white bg-info mb-3">
+                           <div class="card-header">Categories</div>
+                           <div class="card-body">
+                              <h5 class="card-title">Total Categories:</h5>
+                              <p class="card-text">{{totalCategories}}</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12 col-xl-5">
+                  <h4>Posts Analysis</h4>
+                  <div id="container" style="width:100%; height:300px;"></div>
+               </div>
+            </div>  
+            <div class="row">
+               <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-xl-6">
+                  <h4>Available Categories</h4>
+                  <table class="table">
+                     <thead>
+                     <tr>
+                        <th class="cat-table">Categories</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr data-ng-repeat="i in cateArray">
+                        <td class="cat-table">{{i.categoryName}}</td>
+                     </tr>
+                     </tbody>
+                  </table>            
+               </div>
+               <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-xl-6">
+                  <h4>Categories in Posts</h4>  
+                  <table class="table">
+                     <thead>
+                        <tr>
+                           <th>Category</th>
+                           <th>Related Posts</th>
+                        </tr>
+                     </thead>
+                        <tbody>
+                        <tr data-ng-repeat="i in final">
+                           <td>{{i.name}}</td>
+                           <td>{{i.y}}</td>
+                        </tr>
+                        </tbody>
+                     </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="../js/customApp.js"></script>
+   <script src="../js/others.js"></script>
+</html>
